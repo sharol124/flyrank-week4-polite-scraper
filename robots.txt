@@ -1,0 +1,10 @@
+import urllib.robotparser
+
+rp = urllib.robotparser.RobotFileParser()
+rp.set_url("https://books.toscrape.com/robots.txt")
+rp.read()
+
+if rp.can_fetch("*", BASE_URL):
+    print("Allowed")
+else:
+    print("Not allowed")
